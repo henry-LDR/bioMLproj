@@ -8,7 +8,7 @@ from sklearn.metrics import accuracy_score
 #A neural network.
 
 #Data import: Take all of the data from the csv and read it into a Pandas DataFrame
-df=pd.read_csv("diabetes_data.csv")
+df=pd.read_csv("diabetes_50_50.csv")
 #Diagnosis is 1 or 0 (diabetes or not)
 diagnosis=df["Diabetes_binary"]
 #Factors is everything else (BP, BMI, etc.)
@@ -22,10 +22,10 @@ factors_train,factors_test,diagnosis_train,diagnosis_test=train_test_split(facto
 
 #Ensemble strategies
 #Random forest
-diabetes_random_forest=RandomForestClassifier(n_estimators=200,criterion="entropy", max_depth=30)
-print("training model")
+diabetes_random_forest=RandomForestClassifier(n_estimators=5000,criterion="entropy", max_depth=7,n_jobs=8)
 diabetes_random_forest.fit(factors_train,diagnosis_train)
 print("model trained successfully")
 results_test=diabetes_random_forest.predict(factors_test)
+print(results_test)
 accuracy=accuracy_score(diagnosis_test, results_test)
 print(accuracy)
