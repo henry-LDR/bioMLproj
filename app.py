@@ -1,6 +1,7 @@
 import pandas as pd
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
+from sklearn.metrics import accuracy_score
 #import torch
 
 #Two/Three modes: Ensemble strategies like XGBoost and Random Forest (which are similar)
@@ -22,3 +23,9 @@ factors_train,factors_test,diagnosis_train,diagnosis_test=train_test_split(facto
 #Ensemble strategies
 #Random forest
 diabetes_random_forest=RandomForestClassifier(n_estimators=200,criterion="entropy", max_depth=30)
+print("training model")
+diabetes_random_forest.fit(factors_train,diagnosis_train)
+print("model trained successfully")
+results_test=diabetes_random_forest.predict(factors_test)
+accuracy=accuracy_score(diagnosis_test, results_test)
+print(accuracy)
