@@ -21,4 +21,4 @@ factors_train,factors_test,diagnosis_train,diagnosis_test=train_test_split(facto
 
 #Ensemble strategies
 #Random forest
-RandomForestClassifier(n_estimators=200,criterion=entropy, )
+diabetes_random_forest=RandomForestClassifier(n_estimators=200,criterion="entropy", max_depth=30)
