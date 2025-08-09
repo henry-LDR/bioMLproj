@@ -1,4 +1,4 @@
-#high score = Average Accuracy over 3 runs: 0.7552 
+#high score = Average Accuracy over 3 runs: 0.7552 E
 #parameters = Estimators: 5000  Depth: 5  Learning Rate: 0.05  Gamma: 0.47
 
 
