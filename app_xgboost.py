@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 #A neural network.
 
 #Data import: Take all of the data from the csv and read it into a Pandas DataFrame
-df=pd.read_csv("diabetes_5050.csv")
+df=pd.read_csv("diabetes_50_50.csv")
 #Diagnosis is 1 or 0 (diabetes or not)
 diagnosis=df["Diabetes_binary"]
 #Factors is everything else (BP, BMI, etc.)
